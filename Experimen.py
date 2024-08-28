@@ -7,8 +7,7 @@ def calc_sum(data_structure):
             summa += i
         elif isinstance(i, dict):
             for key, value in i.items():
-                summa += len(key)
-                summa += value
+                summa += len(key) + value
         elif isinstance(i, (list, set, tuple)):
             for j in i:
                 if isinstance(j, int or float):
@@ -17,8 +16,7 @@ def calc_sum(data_structure):
                     summa += len(j)
                 elif isinstance(j, dict):
                     for key, value in j.items():
-                        summa += len(key)
-                        summa += value
+                        summa += len(key) + value
                 elif isinstance(j, (list, set, tuple)):
                     for d in j:
                         if isinstance(d, int or float):
@@ -27,8 +25,7 @@ def calc_sum(data_structure):
                             summa += len(d)
                         elif isinstance(d, dict):
                             for key, value in d.items():
-                                summa += len(key)
-                                summa += value
+                                summa += len(key) + value
                         elif isinstance(d, (list, set, tuple)):
                             for r in d:
                                 if isinstance(r, int or float):
@@ -37,8 +34,7 @@ def calc_sum(data_structure):
                                     summa += len(r)
                                 elif isinstance(r, dict):
                                     for key, value in r.items():
-                                        summa += len(key)
-                                        summa += value
+                                        summa += len(key) + value
                                 elif isinstance(r, (list, set, tuple)):
                                     for t in r:
                                         if isinstance(t, int or float):
@@ -65,14 +61,3 @@ data_structure = [
 
 result = calc_sum(data_structure)
 print(result)
-
-
-
-
-
-
-        
-
-
-
-
